@@ -1,2 +1,2 @@
-# jitsi-init
-Jitsi automatic provisioning scripts
+# jitsi-init-debian
+Jitsi automatic provisioning scripts for Debian 10
