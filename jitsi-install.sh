@@ -5,12 +5,15 @@ read hostname
 host=${hostname%.*.*}
 echo $'127.0.0.1	localhost\n'$ip'	'$hostname'	'$host > /etc/hosts
 hostnamectl set-hostname $host
+echo "Kontroluji jestli pro existuje DNS zaznam $hostname a smeruje na $ip"
+echo 'dig +short A $hostname @8.8.8.8'
+
 echo "Nyni si zmente heslo uzivatele root"
-passwd
-apt update
-apt install jitsi-meet -y
-echo -e "letsencrypt@lemo.cloud" | /usr/share/jitsi-meet/scripts/install-letsencrypt-cert.sh
+# passwd
+# apt update
+# apt install jitsi-meet -y
+# echo -e "letsencrypt@lemo.cloud" | /usr/share/jitsi-meet/scripts/install-letsencrypt-cert.sh
 echo "Instalace je dokoncena. Server bude restartovan."
-sleep 8
-reboot now
+sleep 1
+# reboot now
 
