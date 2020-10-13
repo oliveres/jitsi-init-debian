@@ -1,4 +1,9 @@
 #!/bin/bash
+curl https://download.jitsi.org/jitsi-key.gpg.key | sh -c 'gpg --dearmor > /usr/share/keyrings/jitsi-keyring.gpg' 
+echo 'deb [signed-by=/usr/share/keyrings/jitsi-keyring.gpg] https://download.jitsi.org stable/' | tee /etc/apt/sources.list.d/jitsi-stable.list > /dev/null
+apt update
+apt upgrade -y
+
 ip=$(ip route get 8.8.8.8 | awk -F"src " 'NR==1{split($2,a," ");print a[1]}')
 echo "**********************************************************"
 echo "* Vita vas instalace Jitsi serveru beziciho v LEMO Cloud *"
