@@ -1,7 +1,8 @@
 #!/bin/bash
 ip=$(ip route get 8.8.8.8 | awk -F"src " 'NR==1{split($2,a," ");print a[1]}')
-echo "Vita vas instalace Jitsi serveru beziciho pod LEMO Cloud"
-echo "********************************************************"
+echo "**********************************************************"
+echo "* Vita vas instalace Jitsi serveru beziciho v LEMO Cloud *"
+echo "**********************************************************"
 sleep 1
 echo "Zadejte domenu 3. urovne pro tento server (napriklad jitsi.vasefirma.cz)"
 read hostname
